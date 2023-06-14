@@ -6,7 +6,8 @@ namespace Wyzwanie_wyklad_94
     {
         static void Main(string[] args)
         {
-            string input="";
+            //Use var instead of named type, do not define/declare variables before they need to be used
+            string input=""; 
             string dataType;
             int caseIdea;
             bool invalidString=false;
@@ -21,11 +22,14 @@ namespace Wyzwanie_wyklad_94
             dataType = Console.ReadLine();
             caseIdea = int.Parse(dataType);
 
+            
             switch (caseIdea)
             {
                 case 1:
+                    //inconsistent naming, use English, use var 
                     foreach(char litera in stringArray)
                     {
+                        //reverse if to decrease complexity
                         if (char.IsLetter(litera))
                         {
                             continue;
@@ -38,6 +42,8 @@ namespace Wyzwanie_wyklad_94
                     }
 
                     Console.WriteLine($"You've entered {input}");
+                    //when using boolean in if statement, no need to compare them to true or false 
+                    //ternary operator could be used in this case to shorten the code
                     if (invalidString == true)
                     {
                         Console.WriteLine("String is invalid");
@@ -48,8 +54,10 @@ namespace Wyzwanie_wyklad_94
                     }
                     break;
                 case 2:
+                    //naming + var
                     foreach (char cyfra in stringArray)
                     {
+                        //reverse if
                         if (char.IsDigit(cyfra))
                         {                           
                             continue;
@@ -61,6 +69,7 @@ namespace Wyzwanie_wyklad_94
 
                     }
                     Console.WriteLine($"You've entered {input}");
+                    //no need for == true
                     if (invalidInt == true)
                     {
                         Console.WriteLine("Int is invalid");
